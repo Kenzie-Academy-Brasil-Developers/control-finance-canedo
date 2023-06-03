@@ -15,9 +15,30 @@
       content="Control Finance - Seu controle financeiro"
     />
     <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="./src/styles/modal.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
+
+    <dialog class="modal__container">
+      <div class="div__container">
+        <div class="div__modal">
+          <h2 class="modal-title">Registro de valor</h2>
+          <p class="modal-close">X</p>
+        </div>
+        <p class="modal-text">Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+        <h3 class="modal-title-one">Valor</h3>
+        <input  class="modal-input" type="text" placeholder="R$ 00,00">
+        <h3 class="modal-title-two">Tipo de valor</h3>
+        <button class="modal-button">Entrada</button>
+        <button class="modal-button">Saída</button>
+        <div class="div-group-buttons">
+          <button class="div-button-cancel">Cancelar</button>
+          <button class="div-button-value">Inserir valor</button>
+        </div>
+      </div>
+    </dialog>
+
     <header class="header__container">
       <h1 class="title__logo"><span>Control</span>Finance</h1>
       <button class="button-register">Registrar novo valor</button>
@@ -41,7 +62,8 @@
       </section>
       
       <section class="section__third">
-        <div class="div-card">
+        <div  class="cards__container">
+          <div class="div-card">
           <p class="card-title">R$ 40,00</p>
           <div class="button-with-image" >
             <button class="card-button">Entrada</button>
@@ -50,6 +72,8 @@
             </figure>
           </div>
         </div>
+        </div>
+        
       </section>
       
     </main>

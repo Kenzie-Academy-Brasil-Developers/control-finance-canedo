@@ -125,6 +125,13 @@
 
 
 .section__third{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+
+.cards__container{
   padding: 8px 16px;
   margin: 16px;
   height: 42px;
@@ -158,8 +165,6 @@
   width: 12.25px;
   height: 14px;
   cursor: pointer;
-  
-
 }
 
 .card-image:hover{
@@ -188,4 +193,23 @@
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-1);
   font-family: var(--font-family-1);
+}
+
+@media (min-width: 1024px){
+  .header__container{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20%;
+  }
+
+  .button-register{
+  width: 164px;
+  }
+
+  .main__container{
+    padding: 0 20%;
+  }
+
+
 }

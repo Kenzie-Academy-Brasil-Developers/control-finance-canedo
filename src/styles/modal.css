@@ -1,0 +1,170 @@
+.modal__container{
+  border: none;
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  border-radius: var(--radius-1);
+}
+
+.modal__container::backdrop{
+  background-color: rgba(0, 0, 0, 0.795);
+}
+
+.div__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  gap: 25px;
+}
+
+.div__modal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title{
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-1);
+  font-family: var(--font-family-1);
+  color: var(--color-grey-1);
+}
+
+.modal-close{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-1);
+  font-family: var(--font-family-2);
+  color: var(--color-grey-1);
+  cursor: pointer;
+  background: var(--color-grey-5);
+  border-radius: var(--radius-2);
+  width: 35px;
+  height: 30px;
+
+}
+
+.modal-text{
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-3);
+  font-family: var(--font-family-1);
+  color: var(--color-grey-2);
+}
+
+.modal-title-one{
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-2);
+  font-family: var(--font-family-1);
+  color: var(--color-grey-1);
+}
+
+.modal-input{
+  height: 44px;
+  padding: 0px 16px;
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-2);
+  font-family: var(--font-family-1);
+  border: 1.5px solid var(--color-grey-3);
+  border-radius: var(--radius-1);
+}
+
+.modal-input::placeholder{
+  color: var(--color-grey-3);
+}
+
+.modal-input:focus{
+  border-color: var(--color-brand-1);
+  outline: none;
+}
+
+.modal-title-two{
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-2);
+  font-family: var(--font-family-1);
+  color: var(--color-grey-1);
+}
+
+.modal-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 14px;
+  height: 32px;
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-1);
+  font-family: var(--font-family-1);
+  color: var(--color-grey-2);
+  border: 1.5px solid var(--color-grey-5);
+  border-radius: var(--radius-1);
+  background-color: var(--fixed-white);
+  cursor: pointer;
+}
+
+.modal-button:hover{
+  border: 1.5px solid var(--color-brand-1);
+  color: var(--color-brand-1);
+}
+
+.div-group-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.div-button-cancel{
+  background-color: var(--color-grey-5);
+  border: 1.5px solid var(--color-grey-4);
+  border-radius: var(--radius-1);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-1);
+  font-family: var(--font-family-1);
+  color: var(--color-grey-2);
+  padding: 7px 14px;
+  height: 31px;
+  width: 45%;
+  cursor: pointer;
+
+}
+
+.div-button-cancel:hover{
+  background-color: var(--color-grey-4);
+  color: var(--color-grey-2);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-1);
+
+}
+
+.div-button-value{
+  background-color: var(--color-brand-1);
+  border: none;
+  border-radius: var(--radius-1);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-1);
+  font-family: var(--font-family-1);
+  color: var(--color-mode);
+  padding: 7px 14px;
+  height: 31px;
+  width: 45%;
+  cursor: pointer;
+}
+
+.div-button-value:hover{
+  background-color: var(--color-brand-2);
+  color: var(--fixed-white);
+
+}
+
+
+@media (min-width: 1024px){
+  .modal__container{
+    width: 500px;
+  }
+
+
+
+
+}
