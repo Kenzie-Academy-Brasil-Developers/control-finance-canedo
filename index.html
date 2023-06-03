@@ -18,9 +18,45 @@
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
+    <header class="header__container">
+      <h1 class="title__logo"><span>Control</span>Finance</h1>
+      <button class="button-register">Registrar novo valor</button>
+    </header>
+    <main  class="main__container">
+
+      <section class="section__primary">
+        <h2 class="section__primary-title">Resumo Financeiro</h2>
+        <div class="group__buttons">
+          <button class="section__primary-button">Todos</button>
+          <button class="section__primary-button">Entradas</button>
+          <button class="section__primary-button">Saídas</button>
+        </div>
+      </section>
+  
+      <section class="section__secundary">
+        <div class="div__table">
+          <h3 class="table-title">Soma de valores</h3>
+          <p class="table-number">R$ 2.120,00</p>
+        </div>
+      </section>
+      
+      <section class="section__third">
+        <div class="div-card">
+          <p class="card-title">R$ 40,00</p>
+          <div class="button-with-image" >
+            <button class="card-button">Entrada</button>
+            <figure class="card-image">
+              <img src="./src/assets/trash.svg" alt="trash">
+            </figure>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+
+
     <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/modal.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>
