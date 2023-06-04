@@ -1,7 +1,7 @@
 /* Desenvolva sua lógica aqui */
 import { valuesCategory, insertedValues } from "./valuesData.js";
 
-function renderCards(insertedValues){
+export function renderCards(insertedValues){
   const sectionThird = document.querySelector(".section__third")
 
   for(let i = 0; i<insertedValues.length; i++){
@@ -36,14 +36,3 @@ function renderCards(insertedValues){
 }
 renderCards(insertedValues)
 
-// <section class="section__third">
-// <div class="div-card">
-//   <p class="card-title">R$ 40,00</p>
-//   <div class="button-with-image" >
-//     <button class="card-button">Entrada</button>
-//     <figure class="card-image">
-//       <img src="./src/assets/trash.svg" alt="trash">
-//     </figure>
-//   </div>
-// </div>
-// </section>
