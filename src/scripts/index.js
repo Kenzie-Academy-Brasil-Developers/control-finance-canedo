@@ -1,6 +1,30 @@
 /* Desenvolva sua lógica aqui */
 import { valuesCategory, insertedValues, insertedValuesfiltered } from "./valuesData.js";
 
+
+const zeroCards = (insertedValues) => {
+  
+  const divContainer = document.querySelector(".div__container-no-value");
+  
+  if (insertedValues.length === 0) {
+    divContainer.classList.remove("invisible"); 
+  }
+  console.log(insertedValues)
+}
+
+function count() {
+  const tableNumber = document.querySelector(".table-number"); 
+
+  const sum = insertedValues.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.value;
+  }, 0);
+
+tableNumber.textContent = `R$ ${sum}`
+}
+
+
+
+
 export function renderCards(insertedValues) {
   const sectionThird = document.querySelector(".section__third");
 
@@ -40,24 +64,10 @@ export function renderCards(insertedValues) {
       removeCard(cardsContainer);
   });
 });
-}
-renderCards(insertedValues);
-
-
-const zeroCards = (insertedValues) => {
-  const cardsContainer = document.querySelector(".cards__container");
-  const divContainer = document.querySelector(".div__container-no-value");
-  
-  if (insertedValues.length == 0) {
-    divContainer.classList.remove("invisible"); 
-  }
-  console.log(insertedValues)
-}
 zeroCards(insertedValues)
-
-
-
-
+count();
+}
+renderCards(insertedValues)
 
 
 
@@ -73,7 +83,7 @@ function addNewValue(insertedValues) {
   e.preventDefault()
   
   const modalInput = document.querySelector(".modal-input")
-  const valueTitle = modalInput.value
+  const valueTitle = parseFloat(modalInput.value)
   
   const entradaBtn = document.querySelector(".modal-button-enter");
   const saidaBtn = document.querySelector(".modal-button-exit");
@@ -99,5 +109,7 @@ function addNewValue(insertedValues) {
   
   renderCards([newValue]);
 })
+count();
 }
 addNewValue(insertedValues)
+
