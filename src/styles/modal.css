@@ -110,6 +110,11 @@
   color: var(--color-brand-1);
 }
 
+.modal-button.selected{
+  background-color: var(--color-brand-2);
+  color: var(--fixed-white);
+}
+
 .div-group-buttons{
   display: flex;
   justify-content: space-between;
@@ -135,8 +140,9 @@
   color: var(--color-grey-2);
   font-size: var(--font-size-2);
   font-weight: var(--font-weight-1);
-
 }
+
+
 
 .div-button-value{
   background-color: var(--color-brand-1);

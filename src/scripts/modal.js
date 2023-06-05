@@ -31,6 +31,22 @@ function closeModal(){
 }
 closeModal()
 
+function buttonClick(){
+  const buttonEnter = document.getElementById("buttonEnter");
+  const buttonExit = document.getElementById("buttonExit");
+
+  buttonEnter.addEventListener("click", function() {
+    buttonEnter.classList.add("selected");
+    buttonExit.classList.remove("selected");
+  });
+
+  buttonExit.addEventListener("click", function() {
+    buttonExit.classList.add("selected");
+    buttonEnter.classList.remove("selected");
+  });
+}
+buttonClick()
+
 function addNewValue() {
   
   let buttonValue = document.querySelector(".div-button-value")
@@ -40,28 +56,32 @@ function addNewValue() {
   let modalInput = document.querySelector(".modal-input")
   let valueTitle = modalInput.value
   
-  const entradaBtn = document.getElementById("buttonEnter");
-  const saidaBtn = document.getElementById("buttonExit");
+  let entradaBtn = document.getElementById("buttonEnter");
+  let saidaBtn = document.getElementById("buttonExit");
+  let buttonCard = document.querySelector(".card-button")
 
   let valorSelecionado = "";
 
-  if (entradaBtn.checked) {
+  if (entradaBtn.classList.contains("selected")) {
     valorSelecionado = entradaBtn.value;
-  } else if (saidaBtn.checked) {
+    buttonCard.innerText = "Entrada"
+  } else if (saidaBtn.classList.contains("selected")) {
     valorSelecionado = saidaBtn.value;
+    buttonCard.innerText  = "Saída"
+
   }
   
 
-  insertedValues.push({
-    value: valueTitle,
+  const newValue = {
+    value:` R$ ${valueTitle}`,
     categoryID: valorSelecionado
-  });
-  
+  };
 
-  
-  modalInput.value = ""
+  insertedValues.unshift(newValue);
 
-  renderCards(insertedValues)
+  modalInput.value = "";
+
+  renderCards([newValue]);
 })
 }
 
