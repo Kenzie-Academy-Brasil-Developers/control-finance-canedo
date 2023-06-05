@@ -17,3 +17,5 @@ export let insertedValues = [
     categoryID: 0,
   },
 ];
+
+export let insertedValuesfiltered = [];

@@ -18,6 +18,7 @@ function closeModal(){
   const modalClose = document.querySelector(".modal-close")
   const modalContainer = document.querySelector('.modal__container')
   const buttonCancel = document.querySelector('.div-button-cancel')
+  const buttonValue = document.querySelector('.div-button-value')
 
   modalClose.addEventListener("click", function(e){
     e.preventDefault()
@@ -25,6 +26,11 @@ function closeModal(){
   })
 
   buttonCancel.addEventListener("click", function(e){
+    e.preventDefault()
+    modalContainer.close()
+  })
+
+  buttonValue.addEventListener("click", function(e){
     e.preventDefault()
     modalContainer.close()
   })

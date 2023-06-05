@@ -1,5 +1,5 @@
 /* Desenvolva sua lógica aqui */
-import { valuesCategory, insertedValues } from "./valuesData.js";
+import { valuesCategory, insertedValues, insertedValuesfiltered } from "./valuesData.js";
 
 export function renderCards(insertedValues) {
   const sectionThird = document.querySelector(".section__third");
@@ -39,30 +39,38 @@ export function renderCards(insertedValues) {
     imageTrash.addEventListener("click", function() {
       removeCard(cardsContainer);
   });
-
 });
-
 }
-
 renderCards(insertedValues);
 
 
-const removeCard = (card) => card.remove()
+const zeroCards = (insertedValues) => {
+  const cardsContainer = document.querySelector(".cards__container");
+  const divContainer = document.querySelector(".div__container-no-value");
+  
+  if (insertedValues.length == 0) {
+    divContainer.classList.remove("invisible"); 
+  }
+  console.log(insertedValues)
+}
+zeroCards(insertedValues)
 
-// const persons = [
-  //   { name: 'John', age: 30 },
-  //   { name: 'Jane', age: 25 },
-  //   { name: 'Bob', age: 40 },
-//   { name: 'Alice', age: 35 }
-// ];
-// const totalAges = persons.reduce((accumulator, person) => accumulator + person.age, 0);
-// console.log(totalAges);
+
+
+
+
+
+
+
+
+
+const removeCard = (card) => card.remove()
 
 function addNewValue(insertedValues) {
   
   const buttonValue = document.querySelector(".div-button-value")
   buttonValue.addEventListener("click", function(e){
-    e.preventDefault()
+  e.preventDefault()
   
   const modalInput = document.querySelector(".modal-input")
   const valueTitle = modalInput.value
@@ -93,29 +101,3 @@ function addNewValue(insertedValues) {
 })
 }
 addNewValue(insertedValues)
-
-const zeroCards = () => {
-  if (insertedValues.length) {
-    const sectionThird = document.querySelector(".section__third");
-    const divContainer = document.createElement("div");
-    const noValueTitle = document.createElement("h2");
-    const noValueText = document.createElement("p");
-   
-    divContainer.classList.add("div__container-no-value");
-    
-   
-    noValueTitle.classList.add("noValue-title");
-    noValueTitle.textContent = "Nenhum valor cadastrado";
-    
-  
-    noValueText.classList.add("noValue-text");
-    noValueText.textContent = "Registrar novo valor";
-    
-    
-    divContainer.append(noValueTitle,noValueText);
-    
-    sectionThird.appendChild(divContainer);
-  }
-}
-zeroCards()
-
