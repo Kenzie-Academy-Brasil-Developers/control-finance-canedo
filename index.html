@@ -28,10 +28,12 @@
         </div>
         <p class="modal-text">Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
         <h3 class="modal-title-one">Valor</h3>
-        <input  class="modal-input" type="text" placeholder="R$ 00,00">
-        <h3 class="modal-title-two">Tipo de valor</h3>
-        <button id="buttonEnter"  value="Entrada" name="tipo" class="modal-button">Entrada</button>
-        <button id="buttonExit"  value="Saída" name="tipo" class="modal-button">Saída</button>
+        <input  class="modal-input" type="number"  placeholder="R$ 00,00">
+        <div class="container-title-buttons">
+          <h3 class="modal-title-two">Tipo de valor</h3>
+          <button id="buttonEnter"  value="Entrada" name="tipo" class="modal-button-enter">Entrada</button>
+          <button id="buttonExit"  value="Saída" name="tipo" class="modal-button-exit">Saída</button>
+        </div>
         <div class="div-group-buttons">
           <button class="div-button-cancel">Cancelar</button>
           <button class="div-button-value">Inserir valor</button>
@@ -62,7 +64,11 @@
       </section>
       
       <section class="section__third">
-        <div  class="cards__container">
+        <div class="div__container-no-value">
+          <h2 class="noValue-title">Nenhum valor cadastrado</h2>
+          <p class="noValue-text">Registrar novo valor</p>
+        </div>
+        <!-- <div  class="cards__container">
           <div class="div-card">
           <p class="card-title">R$ 40,00</p>
           <div class="button-with-image" >
@@ -71,7 +77,7 @@
               <img src="./src/assets/trash.svg" alt="trash">
             </figure>
           </div>
-        </div>
+        </div> -->
         </div>
         
       </section>

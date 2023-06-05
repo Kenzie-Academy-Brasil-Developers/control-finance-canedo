@@ -10,7 +10,7 @@ function openModal(){
     e.preventDefault()
     modalContainer.showModal()
   })
-  addNewValue()
+  
 }
 openModal()
 
@@ -35,53 +35,57 @@ function buttonClick(){
   const buttonEnter = document.getElementById("buttonEnter");
   const buttonExit = document.getElementById("buttonExit");
 
+  
+
   buttonEnter.addEventListener("click", function() {
     buttonEnter.classList.add("selected");
-    buttonExit.classList.remove("selected");
+    buttonExit.classList.remove("selected")
   });
 
   buttonExit.addEventListener("click", function() {
     buttonExit.classList.add("selected");
-    buttonEnter.classList.remove("selected");
+    buttonEnter.classList.remove("selected")
   });
+
+
 }
 buttonClick()
 
-function addNewValue() {
+// function addNewValue() {
   
-  let buttonValue = document.querySelector(".div-button-value")
-  buttonValue.addEventListener("click", function(e){
-  e.preventDefault()
+//   let buttonValue = document.querySelector(".div-button-value")
+//   buttonValue.addEventListener("click", function(e){
+//   e.preventDefault()
   
-  let modalInput = document.querySelector(".modal-input")
-  let valueTitle = modalInput.value
+//   let modalInput = document.querySelector(".modal-input")
+//   let valueTitle = modalInput.value
   
-  let entradaBtn = document.getElementById("buttonEnter");
-  let saidaBtn = document.getElementById("buttonExit");
-  let buttonCard = document.querySelector(".card-button")
+//   let entradaBtn = document.getElementById("buttonEnter");
+//   let saidaBtn = document.getElementById("buttonExit");
+//   let buttonCard = document.querySelector(".card-button")
 
-  let valorSelecionado = "";
+//   let valorSelecionado = "";
 
-  if (entradaBtn.classList.contains("selected")) {
-    valorSelecionado = entradaBtn.value;
-    buttonCard.innerText = "Entrada"
-  } else if (saidaBtn.classList.contains("selected")) {
-    valorSelecionado = saidaBtn.value;
-    buttonCard.innerText  = "Saída"
+//   if (entradaBtn.classList.contains("selected")) {
+//     valorSelecionado = 0;
+//     buttonCard.innerText = "Entrada"
+//   } else if (saidaBtn.classList.contains("selected")) {
+//     valorSelecionado = 1;
+//     buttonCard.innerText  = "Saída"
 
-  }
+//   }
   
 
-  const newValue = {
-    value:` R$ ${valueTitle}`,
-    categoryID: valorSelecionado
-  };
+//   const newValue = {
+//     value:` R$ ${valueTitle}`,
+//     categoryID: valorSelecionado
+//   };
 
-  insertedValues.unshift(newValue);
+//   insertedValues.unshift(newValue);
 
-  modalInput.value = "";
+//   modalInput.value = "";
 
-  renderCards([newValue]);
-})
-}
-
+//   renderCards([newValue]);
+// })
+// }
+// console.log(renderCards(insertedValues))

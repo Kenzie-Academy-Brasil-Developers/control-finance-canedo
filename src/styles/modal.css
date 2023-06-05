@@ -82,6 +82,12 @@
   outline: none;
 }
 
+.container-title-buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .modal-title-two{
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-2);
@@ -89,7 +95,7 @@
   color: var(--color-grey-1);
 }
 
-.modal-button{
+.modal-button-enter,.modal-button-exit{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,12 +111,13 @@
   cursor: pointer;
 }
 
-.modal-button:hover{
+
+.modal-button-enter:hover,.modal-button-exit:hover{
   border: 1.5px solid var(--color-brand-1);
   color: var(--color-brand-1);
 }
 
-.modal-button.selected{
+.modal-button-enter.selected,.modal-button-exit.selected{
   background-color: var(--color-brand-2);
   color: var(--fixed-white);
 }
@@ -169,8 +176,22 @@
   .modal__container{
     width: 500px;
   }
+  .container-title-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .div-group-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  .div-button-cancel{
+    width: 25%;
+  }
+  .div-button-value{
+    width: 25%;
 
-
-
+  }
 
 }
