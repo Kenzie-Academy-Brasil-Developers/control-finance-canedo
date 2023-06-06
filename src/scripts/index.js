@@ -1,7 +1,6 @@
 /* Desenvolva sua lógica aqui */
 import { valuesCategory, insertedValues, insertedValuesfiltered } from "./valuesData.js";
 
-
 const zeroCards = (listCard) => {
   const divContainer = document.querySelector(".div__container-no-value");
   
@@ -13,7 +12,7 @@ const zeroCards = (listCard) => {
 }
 
 
-function sumValues(array) {
+function showValues(array) {
   const tableNumber = document.querySelector(".table-number"); 
 
   const sum = array.reduce((accumulator, currentValue) => {
@@ -24,7 +23,7 @@ function sumValues(array) {
 }
 
 
-function excluirContainer() {
+function addContainerClass() {
   const cardsContainer = document.querySelectorAll(".cards__container");
   const divContainer = document.querySelector(".div__container-no-value");
 console.log(cardsContainer)
@@ -32,10 +31,7 @@ console.log(cardsContainer)
   if (cardsContainer.length > 0) {
     divContainer.classList.add("invisible"); 
   }
-}excluirContainer()
-
-
-
+}addContainerClass()
 
 
 function filtersCards(){
@@ -43,8 +39,6 @@ function filtersCards(){
   const buttonEntry = document.querySelector("#btnEntry")
   const buttonOutput = document.querySelector("#btnOutput")
   
-
-
   buttonAll.addEventListener("click", () => {
     const insertedValuesfiltered = insertedValues.filter(value => value.categoryID === 0 || value.categoryID === 1)
     clearCards()
@@ -55,14 +49,14 @@ function filtersCards(){
     const insertedValuesfiltered = insertedValues.filter(value => value.categoryID === 0)
     clearCards()
     renderCards(insertedValuesfiltered)
-    sumValues(insertedValuesfiltered)
+    showValues(insertedValuesfiltered)
   })
 
   buttonOutput.addEventListener("click", () => {
     const insertedValuesfiltered = insertedValues.filter(value => value.categoryID === 1)
     clearCards()
     renderCards(insertedValuesfiltered)
-    sumValues(insertedValuesfiltered)
+    showValues(insertedValuesfiltered)
   })
   
 }
@@ -76,7 +70,6 @@ function clearCards() {
     sectionThird.firstChild.remove();
   }
 }
-
 
 
 function renderCards(listValues) {
@@ -117,19 +110,14 @@ function renderCards(listValues) {
 
     imageTrash.addEventListener("click", function() {
       removeCard(cardsContainer, insertedValues);
-      sumValues(insertedValues)
-      excluirContainer()
-      
+      showValues(insertedValues)
+      addContainerClass()   
   });
 });
-sumValues(insertedValues)
-excluirContainer()
+showValues(insertedValues)
+addContainerClass()
 }
 renderCards(insertedValues)
-
-
-
-
 
 
 const removeCard = (card, array) => {
@@ -138,15 +126,13 @@ const removeCard = (card, array) => {
   const index = array.findIndex((element) =>  element.id ===  parseInt(id))
   array.splice(index,1)
   
-  sumValues(insertedValues)
+  showValues(insertedValues)
   zeroCards(insertedValues)
-  excluirContainer()
-  
+  addContainerClass()
 }
 
 
 let id = 3
-
 function addNewValue(insertedValues) {
   
   const buttonValue = document.querySelector(".div-button-value")
@@ -183,9 +169,9 @@ function addNewValue(insertedValues) {
 
 
 })
-sumValues(insertedValues)
+showValues(insertedValues)
 zeroCards(insertedValues)
-excluirContainer()
+addContainerClass()
 }
 addNewValue(insertedValues)
 

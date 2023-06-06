@@ -46,7 +46,6 @@
   border-radius: var(--radius-2);
   width: 35px;
   height: 30px;
-
 }
 
 .modal-text{
@@ -86,8 +85,6 @@
   font-weight: var(--font-weight-2);
   font-family: var(--font-family-1);
   border: none;
- 
-  
 }
 
 .modal-input::placeholder{
@@ -119,7 +116,7 @@
   padding: 0px 14px;
   height: 32px;
   font-size: var(--font-size-3);
-  font-weight: var(--font-weight-1);
+  font-weight: var(--font-weight-2);
   font-family: var(--font-family-1);
   color: var(--color-grey-2);
   border: 1.5px solid var(--color-grey-5);
@@ -135,8 +132,9 @@
 }
 
 .modal-button-enter.selected,.modal-button-exit.selected{
-  background-color: var(--color-brand-2);
-  color: var(--fixed-white);
+  border: 1.5px solid var(--color-brand-1);
+  color: var(--color-brand-1);
+  font-weight: var(--font-weight-1);
 }
 
 .div-group-buttons{
@@ -156,7 +154,6 @@
   height: 31px;
   width: 45%;
   cursor: pointer;
-
 }
 
 .div-button-cancel:hover{
@@ -165,7 +162,6 @@
   font-size: var(--font-size-2);
   font-weight: var(--font-weight-1);
 }
-
 
 
 .div-button-value{
@@ -185,7 +181,6 @@
 .div-button-value:hover{
   background-color: var(--color-brand-2);
   color: var(--fixed-white);
-
 }
 
 
@@ -208,7 +203,6 @@
   }
   .div-button-value{
     width: 25%;
-
   }
 
 }

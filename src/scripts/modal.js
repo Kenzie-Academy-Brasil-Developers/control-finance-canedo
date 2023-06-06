@@ -1,7 +1,5 @@
 /* Desenvolva sua lógica aqui */
 
-import { valuesCategory, insertedValues } from "./valuesData.js";
-
 function openModal(){
   const modalContainer = document.querySelector('.modal__container')
   const buttonRegister = document.querySelector('.button-register')
@@ -10,7 +8,6 @@ function openModal(){
     e.preventDefault()
     modalContainer.showModal()
   })
-  
 }
 openModal()
 
@@ -40,16 +37,20 @@ closeModal()
 function buttonClick(){
   const buttonEnter = document.getElementById("buttonEnter");
   const buttonExit = document.getElementById("buttonExit");
+  const buttonValue = document.querySelector('.div-button-value')
 
+  buttonEnter.classList.add("selected")
 
   buttonEnter.addEventListener("click", function() {
     buttonEnter.classList.add("selected");
     buttonExit.classList.remove("selected")
+    
   });
 
   buttonExit.addEventListener("click", function() {
     buttonExit.classList.add("selected");
     buttonEnter.classList.remove("selected")
+    
   });
 
 }
