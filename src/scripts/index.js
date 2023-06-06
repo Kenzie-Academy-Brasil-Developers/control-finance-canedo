@@ -6,11 +6,14 @@ const zeroCards = (insertedValues) => {
   
   const divContainer = document.querySelector(".div__container-no-value");
   
-  if (insertedValues.length === 0) {
+  if (insertedValues.length === 0) {console.log(divContainer)
     divContainer.classList.remove("invisible"); 
   }
-  console.log(insertedValues)
 }
+
+
+
+
 
 function count() {
   const tableNumber = document.querySelector(".table-number"); 
@@ -24,11 +27,10 @@ tableNumber.textContent = `R$ ${sum}`
 
 
 
-
-export function renderCards(insertedValues) {
+function renderCards(listValues) {
   const sectionThird = document.querySelector(".section__third");
 
-  insertedValues.forEach((value) => {
+  listValues.forEach((value) => {
     const cardsContainer = document.createElement("div");
     const divCard = document.createElement("div");
     const cardTitle = document.createElement("p");
@@ -47,6 +49,7 @@ export function renderCards(insertedValues) {
     buttonWithImage.classList.add("button-with-image");
     cardButton.classList.add("card-button");
     cardImage.classList.add("card-image");
+    cardsContainer.id = value.id
 
     sectionThird.appendChild(cardsContainer);
     cardsContainer.appendChild(divCard);
@@ -61,10 +64,11 @@ export function renderCards(insertedValues) {
     }
 
     imageTrash.addEventListener("click", function() {
-      removeCard(cardsContainer);
+      removeCard(cardsContainer, insertedValues);
+      count()
+      
   });
 });
-zeroCards(insertedValues)
 count();
 }
 renderCards(insertedValues)
@@ -74,7 +78,17 @@ renderCards(insertedValues)
 
 
 
-const removeCard = (card) => card.remove()
+const removeCard = (card, array) => {
+  const id = card.id 
+  card.remove()
+  const index = array.findIndex((element) =>  element.id ===  parseInt(id))
+  array.splice(index,1)
+  
+  zeroCards(insertedValues)
+}
+
+
+let id = 3
 
 function addNewValue(insertedValues) {
   
@@ -97,13 +111,14 @@ function addNewValue(insertedValues) {
     valorSelecionado = 1;
 
   }
-  
+  id = id+1
   const newValue = {
+    id : id,
     value: valueTitle,
     categoryID: valorSelecionado
   };
   
-  insertedValues.unshift(newValue);
+  insertedValues.push(newValue);
   
   modalInput.value = "";
   

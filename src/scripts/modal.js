@@ -1,5 +1,5 @@
 /* Desenvolva sua lógica aqui */
-import { renderCards } from "./index.js";
+
 import { valuesCategory, insertedValues } from "./valuesData.js";
 
 function openModal(){
