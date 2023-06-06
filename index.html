@@ -28,7 +28,10 @@
         </div>
         <p class="modal-text">Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
         <h3 class="modal-title-one">Valor</h3>
-        <input  class="modal-input" type="number"  placeholder="R$ 00,00">
+        <div class="container__input">
+          <div class="title-input">R$</div>
+          <input  class="modal-input" type="number"  placeholder="00,00" required>
+        </div>
         <div class="container-title-buttons">
           <h3 class="modal-title-two">Tipo de valor</h3>
           <button id="buttonEnter"  value="Entrada" name="tipo" class="modal-button-enter">Entrada</button>
@@ -50,9 +53,9 @@
       <section class="section__primary">
         <h2 class="section__primary-title">Resumo Financeiro</h2>
         <div class="group__buttons">
-          <button class="section__primary-button">Todos</button>
-          <button class="section__primary-button">Entradas</button>
-          <button class="section__primary-button">Saídas</button>
+          <button id="btnAll" class="section__primary-button">Todos</button>
+          <button id="btnEntry" class="section__primary-button">Entradas</button>
+          <button id="btnOutput" class="section__primary-button">Saídas</button>
         </div>
       </section>
   

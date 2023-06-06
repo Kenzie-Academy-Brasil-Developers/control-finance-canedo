@@ -2,16 +2,14 @@
 import { valuesCategory, insertedValues, insertedValuesfiltered } from "./valuesData.js";
 
 
-const zeroCards = (insertedValues) => {
+const zeroCards = (listCard) => {
   
   const divContainer = document.querySelector(".div__container-no-value");
   
-  if (insertedValues.length === 0) {console.log(divContainer)
+  if (listCard.length === 0) {
     divContainer.classList.remove("invisible"); 
   }
 }
-
-
 
 
 
@@ -23,6 +21,60 @@ function count() {
   }, 0);
 
 tableNumber.textContent = `R$ ${sum}`
+}
+
+function sumValues(array) {
+  const tableNumber = document.querySelector(".table-number"); 
+
+  const sum = array.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.value;
+  }, 0);
+
+  tableNumber.textContent = `R$ ${sum}`
+
+}
+
+
+
+
+
+
+function filtersCards(){
+  const buttonAll = document.querySelector("#btnAll")
+  const buttonEntry = document.querySelector("#btnEntry")
+  const buttonOutput = document.querySelector("#btnOutput")
+  
+
+
+  buttonAll.addEventListener("click", () => {
+    const insertedValuesfiltered = insertedValues.filter(value => value.categoryID === 0 || value.categoryID === 1)
+    clearCards()
+    renderCards(insertedValuesfiltered)
+  })
+
+  buttonEntry.addEventListener("click", () => {
+    const insertedValuesfiltered = insertedValues.filter(value => value.categoryID === 0)
+    clearCards()
+    renderCards(insertedValuesfiltered)
+    sumValues(insertedValuesfiltered)
+  })
+
+  buttonOutput.addEventListener("click", () => {
+    const insertedValuesfiltered = insertedValues.filter(value => value.categoryID === 1)
+    clearCards()
+    renderCards(insertedValuesfiltered)
+    sumValues(insertedValuesfiltered)
+  })
+}
+filtersCards()
+
+
+function clearCards() {
+  const sectionThird = document.querySelector(".section__third"); 
+
+  while (sectionThird.firstChild) {
+    sectionThird.firstChild.remove();
+  }
 }
 
 
@@ -125,6 +177,7 @@ function addNewValue(insertedValues) {
   renderCards([newValue]);
 })
 count();
+zeroCards(insertedValues)
 }
 addNewValue(insertedValues)
 

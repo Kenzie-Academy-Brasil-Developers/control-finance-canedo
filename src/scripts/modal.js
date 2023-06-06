@@ -57,41 +57,4 @@ function buttonClick(){
 }
 buttonClick()
 
-// function addNewValue() {
-  
-//   let buttonValue = document.querySelector(".div-button-value")
-//   buttonValue.addEventListener("click", function(e){
-//   e.preventDefault()
-  
-//   let modalInput = document.querySelector(".modal-input")
-//   let valueTitle = modalInput.value
-  
-//   let entradaBtn = document.getElementById("buttonEnter");
-//   let saidaBtn = document.getElementById("buttonExit");
-//   let buttonCard = document.querySelector(".card-button")
 
-//   let valorSelecionado = "";
-
-//   if (entradaBtn.classList.contains("selected")) {
-//     valorSelecionado = 0;
-//     buttonCard.innerText = "Entrada"
-//   } else if (saidaBtn.classList.contains("selected")) {
-//     valorSelecionado = 1;
-//     buttonCard.innerText  = "Saída"
-
-//   }
-  
-
-//   const newValue = {
-//     value:` R$ ${valueTitle}`,
-//     categoryID: valorSelecionado
-//   };
-
-//   insertedValues.unshift(newValue);
-
-//   modalInput.value = "";
-
-//   renderCards([newValue]);
-// })
-// }
-// console.log(renderCards(insertedValues))
