@@ -3,25 +3,15 @@ import { valuesCategory, insertedValues, insertedValuesfiltered } from "./values
 
 
 const zeroCards = (listCard) => {
-  
   const divContainer = document.querySelector(".div__container-no-value");
   
-  if (listCard.length === 0) {
-    divContainer.classList.remove("invisible"); 
+  if (divContainer) {
+    if (listCard.length === 0) {
+      divContainer.classList.toggle("invisible"); 
+    } 
   }
 }
 
-
-
-function count() {
-  const tableNumber = document.querySelector(".table-number"); 
-
-  const sum = insertedValues.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.value;
-  }, 0);
-
-tableNumber.textContent = `R$ ${sum}`
-}
 
 function sumValues(array) {
   const tableNumber = document.querySelector(".table-number"); 
@@ -31,9 +21,18 @@ function sumValues(array) {
   }, 0);
 
   tableNumber.textContent = `R$ ${sum}`
-
 }
 
+
+function excluirContainer() {
+  const cardsContainer = document.querySelectorAll(".cards__container");
+  const divContainer = document.querySelector(".div__container-no-value");
+console.log(cardsContainer)
+
+  if (cardsContainer.length > 0) {
+    divContainer.classList.add("invisible"); 
+  }
+}excluirContainer()
 
 
 
@@ -65,6 +64,7 @@ function filtersCards(){
     renderCards(insertedValuesfiltered)
     sumValues(insertedValuesfiltered)
   })
+  
 }
 filtersCards()
 
@@ -117,11 +117,13 @@ function renderCards(listValues) {
 
     imageTrash.addEventListener("click", function() {
       removeCard(cardsContainer, insertedValues);
-      count()
+      sumValues(insertedValues)
+      excluirContainer()
       
   });
 });
-count();
+sumValues(insertedValues)
+excluirContainer()
 }
 renderCards(insertedValues)
 
@@ -136,7 +138,10 @@ const removeCard = (card, array) => {
   const index = array.findIndex((element) =>  element.id ===  parseInt(id))
   array.splice(index,1)
   
+  sumValues(insertedValues)
   zeroCards(insertedValues)
+  excluirContainer()
+  
 }
 
 
@@ -149,7 +154,7 @@ function addNewValue(insertedValues) {
   e.preventDefault()
   
   const modalInput = document.querySelector(".modal-input")
-  const valueTitle = parseFloat(modalInput.value)
+  let valueTitle = isNaN(parseFloat(modalInput.value)) ? 0 : parseFloat(modalInput.value);
   
   const entradaBtn = document.querySelector(".modal-button-enter");
   const saidaBtn = document.querySelector(".modal-button-exit");
@@ -175,9 +180,14 @@ function addNewValue(insertedValues) {
   modalInput.value = "";
   
   renderCards([newValue]);
+
+
 })
-count();
+sumValues(insertedValues)
 zeroCards(insertedValues)
+excluirContainer()
 }
 addNewValue(insertedValues)
+
+
 

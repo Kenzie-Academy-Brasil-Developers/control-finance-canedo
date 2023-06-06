@@ -41,7 +41,6 @@ function buttonClick(){
   const buttonEnter = document.getElementById("buttonEnter");
   const buttonExit = document.getElementById("buttonExit");
 
-  
 
   buttonEnter.addEventListener("click", function() {
     buttonEnter.classList.add("selected");
@@ -52,7 +51,6 @@ function buttonClick(){
     buttonExit.classList.add("selected");
     buttonEnter.classList.remove("selected")
   });
-
 
 }
 buttonClick()
