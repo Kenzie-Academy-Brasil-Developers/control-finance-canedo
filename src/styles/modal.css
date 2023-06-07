@@ -1,13 +1,12 @@
 
 .modal__container{
-  animation: upForDown var(--animation-duration);
+  animation: upForDown var(--animation-duration) var(--animation-type);
   border: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 100%;
-  
   border-radius: var(--radius-1);
 }
 
@@ -74,7 +73,6 @@
  font-size: var(--font-size-3);
  font-weight: var(--font-weight-2);
  font-family: var(--font-family-1);
- 
 }
 
 .title-input{
@@ -127,7 +125,6 @@
   background-color: var(--fixed-white);
   cursor: pointer;
 }
-
 
 .modal-button-enter:hover,.modal-button-exit:hover{
   border: 1.5px solid var(--color-brand-1);
@@ -190,7 +187,7 @@
 @media (min-width: 1024px){
   .modal__container{
     width: 500px;
-   
+    animation: upForDownTwo var(--animation-duration) var(--animation-type);
   }
   .container-title-buttons{
     display: flex;
@@ -208,15 +205,29 @@
   .div-button-value{
     width: 25%;
   }
-
 }
 
 @keyframes upForDown {
   from {
-    transform: translateY(-100%);
+    margin-top: -100%; 
+    width: 100%;
   }
+
   to {
-    transform: translateY(0);
+    margin-top: 0%; 
+    width: 100%;
   }
 }
 
+
+@keyframes upForDownTwo {
+  from {
+    margin-top: -100%; 
+    width: 500px;
+  }
+
+  to {
+    margin-top: 0%;
+    width: 500px;
+  }
+}

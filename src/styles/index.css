@@ -220,7 +220,22 @@
   font-family: var(--font-family-1);
   color: var(--color-grey-2);
 }
+@media (min-width: 550px){
+  .header__container{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+  }
+  
+  .button-register{
+    width: 164px;
+  }
 
+  .main__container{
+    padding: 0 10%;
+  }
+}
 
 @media (min-width: 1024px){
   .header__container{
