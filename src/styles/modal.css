@@ -184,28 +184,6 @@
 }
 
 
-@media (min-width: 1024px){
-  .modal__container{
-    width: 500px;
-    animation: upForDownTwo var(--animation-duration) var(--animation-type);
-  }
-  .container-title-buttons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .div-group-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-  }
-  .div-button-cancel{
-    width: 25%;
-  }
-  .div-button-value{
-    width: 25%;
-  }
-}
 
 @keyframes upForDown {
   from {
