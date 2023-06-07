@@ -64,12 +64,10 @@ filtersCards()
 
 
 function clearCards() {
-  const sectionThird = document.querySelector(".section__third"); 
-
-  while (sectionThird.firstChild) {
-    sectionThird.firstChild.remove();
-  }
+  const sectionThird = document.querySelector(".section__third");
+  sectionThird.innerHTML = "";
 }
+
 
 
 function renderCards(listValues) {
